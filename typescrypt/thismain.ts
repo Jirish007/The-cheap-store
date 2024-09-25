@@ -1,15 +1,20 @@
 let shop = document.getElementById("shop");
 //@ts-ignore
 let basket = JSON.parse(localStorage.getItem("data")) || [];
+  //@ts-ignore
+
 const categories = [...new Set(shopItemsData.map((product) => {return product}))]
 var inputProducts = document.querySelector("#input_products")
 
+  //@ts-ignore
 
 inputProducts.addEventListener('keyup', (e) =>{
   //@ts-ignore
     const search = e.target.value.toLowerCase()
     const filter = categories.filter((product) => {
         return(
+  //@ts-ignore
+
             product.name.toLocaleLowerCase().includes(search)
         )
     })
@@ -41,6 +46,8 @@ let generateShop = (prods) => {
     `;
     })
     .join(""));*/
+  //@ts-ignore
+
     return shop.innerHTML = prods
       .map((x) => {
         let { id, images, name, price ,quantity} = x;
@@ -122,12 +129,16 @@ function click_button(id){
  let update = (id) => {
   let search = basket.find((x) => x.id === id);
   // console.log(search.item);
+  //@ts-ignore
+
   document.getElementById(id).innerHTML = search.item;
   calculation();
 };
 //@ts-ignore
     let calculation = () => {
   let cartIcon = document.getElementById("cartAmount");
+  //@ts-ignore
+
   cartIcon.innerHTML = basket.map((x) => x.item).reduce((x, y) => x + y, 0);
 };
 
@@ -139,6 +150,7 @@ calculation();
  let button = document.querySelector(".item")
  
  function Toggle(){
+  //@ts-ignore
      
      nav.classList.add("active")
  
@@ -154,6 +166,8 @@ calculation();
  }
  }
  function Close(){
+  //@ts-ignore
+
      nav.classList.remove("active")
      //@ts-ignore
      cover.style.display = "grid"
